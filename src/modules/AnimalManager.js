@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react';
-
 /*Keeping the Single Responsibility Principle in mind,
 you are going to create a JavaScript module that contains the animal API calls.
 This provides flexibility for your application.
@@ -8,7 +6,6 @@ Other components, in the future, may need the ability to make their own API call
 You're going to eliminate the possibility of duplicate code by making a module
 whose sole responsibility is to interact with the API.
 */
-
 
 const remoteURL = "http://localhost:8088"
 
@@ -22,6 +19,15 @@ export const getAllAnimals = () => {
   return fetch(`${remoteURL}/animals`)
   .then(res => res.json())
 }
+
+// DELETE Functionality - Chapter 10
+
+export const deleteAnimal = (id) => {
+  return fetch(`${remoteURL}/animals/${id}`, {
+    method: "DELETE"
+  }).then(result => result.json())
+}
+
 
 /*
 Our AnimalCard does a great job of rendering a single animal,

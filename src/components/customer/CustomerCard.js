@@ -1,16 +1,8 @@
 import React from "react"
 import "./Customer.css"
 
-/*
-export const CustomerCard = () => (
-    <section className="customer">
-        <h3 className="customer__name">Hannah Hall</h3>
-        <div className="customer__address">Address: 100 Infinity Way</div>
-    </section>
-)
-*/
 
-export const CustomerCard = ({ customer }) => {
+export const CustomerCard = ({ customer, handleDeleteCustomer }) => {
     return (
       <div className="card">
         <div className="card-content">
@@ -21,6 +13,7 @@ export const CustomerCard = ({ customer }) => {
             {customer.name}
           </span></h3>
           <p>Address: {customer.address}</p>
+          <button type="button" onClick={() => handleDeleteCustomer(customer.id)}>Discharge</button>
         </div>
       </div>
     );
