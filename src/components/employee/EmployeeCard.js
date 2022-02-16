@@ -1,16 +1,7 @@
 import React from "react"
 import "./Employee.css"
 
-/*
-export const EmployeeCard = () => (
-    <section className="employee">
-        <h3 className="employee__name">Hannah Hall</h3>
-        <div className="employee__location">Nashville Kennels North</div>
-    </section>
-)
-*/
-
-export const EmployeeCard = ({ employee }) => {
+export const EmployeeCard = ({ employee, handleDeleteEmployee }) => {
     return (
       <div className="card">
         <div className="card-content">
@@ -21,6 +12,7 @@ export const EmployeeCard = ({ employee }) => {
             {employee.name}
           </span></h3>
           <p>Location: {employee.locationId}</p>
+          <button type="button" onClick={() => handleDeleteEmployee(employee.id)}>Discharge</button>
         </div>
       </div>
     );
